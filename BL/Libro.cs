@@ -109,7 +109,31 @@ namespace BL
                             foreach (DataRow row in LibroTable.Rows)
                             {
                                 ML.Libro libro = new ML.Libro();
-   
+
+                                libro.IdLibro = int.Parse(row[0].ToString());
+                                libro.NombreLibro = row[1].ToString();
+
+                                libro.Autor = new ML.Autor();
+                                libro.Autor.IdAutor = int.Parse(row[2].ToString());
+                                libro.Autor.NombreAutor = row[3].ToString();
+
+                                libro.NumeroPaginas = int.Parse(row[4].ToString());
+                                libro.FechaPublicacion = row[5].ToString();
+
+                                libro.Editorial = new ML.Editorial();
+                                libro.Editorial.IdEditorial = int.Parse(row[6].ToString());
+                                libro.Editorial.NombreEditorial = row[7].ToString();
+
+                                libro.Edicion = row[8].ToString();
+
+                                libro.Genero = new ML.Genero();
+                                libro.Genero.IdGenero = int.Parse(row[9].ToString());
+                                libro.Genero.NombreGenero = row[10].ToString();
+
+
+                                result.Objects.Add(libro);//Agrega todos los datos a usuario
+
+
                             }
                         }
                     }

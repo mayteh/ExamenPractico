@@ -25,6 +25,7 @@ namespace PL
                             break;
 
                         case 2:
+                    Libro.GetAll();
                             Console.ReadKey();
                             break;
 

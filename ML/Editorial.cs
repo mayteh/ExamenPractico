@@ -9,6 +9,6 @@ namespace ML
     public class Editorial
     {
         public int IdEditorial { get; set; }
-        public int NombreEditorial { get; set; }
+        public string NombreEditorial { get; set; }
     }
 }

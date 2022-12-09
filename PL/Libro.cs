@@ -45,5 +45,38 @@ namespace PL
                 Console.ReadKey();
             }
         }//YA  
+
+
+        public static void GetAll()
+        {
+
+            ML.Result result = BL.Libro.GetAll();
+
+            if (result.Correct)
+            {
+                foreach (ML.Libro libro in result.Objects)
+                {
+                    Console.WriteLine("-----------------------------------");
+                    Console.WriteLine("Id Libro:" + libro.IdLibro);
+                    Console.WriteLine("Nombre de Libro:" + libro.NombreLibro);
+                    Console.WriteLine("Id Autor:" + libro.IdAutor);
+                    Console.WriteLine("Nombre Autor:" + libro.Autor.NombreAutor);
+                    Console.WriteLine("Numero de paginas:" + libro.NumeroPaginas);
+                    Console.WriteLine("Fecha de publicacion:" + libro.FechaPublicacion);
+                    Console.WriteLine("Id de la editorial:" + libro.IdEditorial);
+                    Console.WriteLine("Nombre de la editorial:" + libro.Editorial.NombreEditorial);
+                    Console.WriteLine("Edicion:" + libro.Edicion);
+                    Console.WriteLine("Id Genero:" + libro.IdGenero);
+                    Console.WriteLine("Nombre genero:" + libro.Genero.NombreGenero);
+
+                    Console.WriteLine("-----------------------------------");
+                }
+
+            }
+            else
+            {
+                //Console.WriteLine("Ocurrio un error " + result.);
+            }
+        }//YA
     }
 }
